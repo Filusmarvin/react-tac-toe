@@ -1,0 +1,16 @@
+.log-out{
+  display: flex;
+  /*border: 2px solid #9dd7fb;*/
+  height: 40px;
+  text-align: right;
+  justify-content: flex-end;
+  /*align-items: flex-end;*/
+}
+
+.log-out button{
+  border: none;
+  background-color: white;
+  margin-right:30px;
+  font-size: 30px;
+  font-weight: lighter;
+}

@@ -1,0 +1,11 @@
+.tile{
+  width: 200px;
+  height: 200px;
+  font-size: 60px;
+  background: white;
+  border: 1px solid black;
+  display: block;
+  float:left;
+  text-align: center;
+  /*line-height: 150px;*/
+}

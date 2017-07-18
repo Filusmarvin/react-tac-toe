@@ -1,0 +1,153 @@
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+a {
+  text-decoration: none;
+  color: #9dd7fb;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #9dd7fb;
+}
+
+a:focus {
+  text-decoration: none;
+  color: #9dd7fb;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #9dd7fb;
+}
+
+a:active {
+  text-decoration: none;
+  color: #9dd7fb;
+}
+
+.hidden{
+  display:none;
+}
+
+
+.login{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-weight: lighter;
+}
+
+.lets-play{
+  text-align: center;
+  font-size: 30px;
+}
+.login-signup{
+  box-shadow: 0px 0px 10px grey;
+  display: flex;
+  flex-direction: column;
+  width: 750px;
+}
+
+/* First input form */
+
+.sign-in{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.sign-in-h1{
+  text-align: center;
+  color: lightblue;
+}
+
+.username-form{
+  display: flex;
+  flex-direction: column;
+  margin:15px;
+  color: lightblue;
+}
+
+.username-form label{
+  padding: 5px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.password-box{
+  display: flex;
+  flex-direction: column;
+  margin:15px;
+}
+
+.username{
+  width: 300px;
+  font-size: 20px;
+  border:none;
+  border-bottom: 1px solid pink;
+}
+
+.password{
+  width: 300px;
+  font-size: 20px;
+  border:none;
+  border-bottom: 1px solid pink;
+}
+
+
+/* Second input form */
+
+.no-account{
+  text-align: center;
+  color: lightblue;
+}
+
+.sign-up{
+  color: lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.sign-up-h1{
+  text-align: center;
+}
+
+/* The Continue Box after you signed in */
+
+.continue{
+  color: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.continue-option{
+  color:#9dd7fb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #9dd7fb;
+  width: 500px;
+  height: 350px;
+  font-size: 30px;
+}
+
+.next-button{
+  font-weight: lighter;
+  font-size: 50px;
+  border: 2px solid #9dd7fb;
+  padding: 10px;
+}
