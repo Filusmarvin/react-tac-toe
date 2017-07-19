@@ -6,7 +6,7 @@ import '../CSS/Announcement.css'
 class Announcement extends Component {
   render(){
     return(
-      <div className={this.props.winner ? "visible" : "hidden"}>
+      <div className={this.props.winner.won ? "visible" : "hidden"}>
         <h2> Game Over </h2>
       </div>
     )

@@ -203,7 +203,7 @@ class Tic extends Component {
 
           <div className="player-side">
             <h1> {this.props.player.name} {this.props.player.age} </h1>
-            <p className="turn"> {turn === 'x' ? " It is your turn " + this.props.player.name  : ' It is their turn ' }</p>
+            <p className="turn"> {turn === 'x' ? " It is your turn " + this.props.player.name  : ' It is Opponents turn ' }</p>
             <p className="won"> {winner.won === 'x' ? 'You are the Winner! ' + player.name : null}  </p>
             <p className="lost"> {winner.won === 'o' ? 'You are the Loser! ' + player.name : null}  </p>
 
@@ -228,7 +228,7 @@ class Tic extends Component {
 
           <div className="opponent-side">
             <h1> opponent </h1>
-            <p className="turn"> {turn === 'o' ? " It is your turn" : ' It is their turn ' } </p>
+            <p className="turn"> {turn === 'o' ? " It is Opponents turn" : ' It is ' + player.name + ' turn ' } </p>
             <p className="won"> {winner.won === 'o' ? 'You are the Winner! Opponent'  : null}  </p>
             <p className="lost"> {winner.won === 'x' ? 'You are the Loser! Opponent' : null}  </p>
             <p> Wins ever: {opponent.wins} </p>
