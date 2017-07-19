@@ -6,7 +6,7 @@ import '../CSS/Tile.css'
 class Tile extends Component {
 
   tileClick(props){
-    console.log(props.loc, props.turn)
+    // console.log(props.loc, props.turn)
     props.updateBoard(props.loc, props.turn);
   }
 

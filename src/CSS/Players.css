@@ -1,0 +1,16 @@
+.card{
+  border: 1px solid #9dd7fb;
+  margin:10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.player-card{
+  width:300px;
+}
+.draw-card{
+  width: 300px; 
+}
+.opponent-card{
+  width:300px;
+}

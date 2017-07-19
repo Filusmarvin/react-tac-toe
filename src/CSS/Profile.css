@@ -1,0 +1,91 @@
+.profile-box{
+  font-weight: 100;
+}
+
+.profile-header{
+  border-bottom: 1px solid black;
+}
+
+.image{
+  width: 200px;
+  height:200px;
+}
+
+/*  Player States */
+
+.player-stats{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 30px;
+}
+
+.player-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.player-container .player-boxes{
+  border: 2px solid black;
+  width: 500px;
+  height: 200px;
+}
+
+
+/* This is for new users */
+
+.new-user{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.user-steps{
+  border: 2px solid blue;
+  width: 500px;
+  height:300px;
+}
+
+.name-box{
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.name-box input{
+  font-size: 20px;
+  width:300px;
+  border:none;
+  border-bottom: 1px solid black;
+}
+
+.name-box label{
+  font-size: 20px;
+  width:300px;
+}
+
+
+.age-box{
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.age-box input{
+  font-size: 20px;
+  width:300px;
+  border:none;
+  border-bottom: 1px solid black;
+}
+
+.age-box label{
+  font-size: 20px;
+  width:300px;
+}

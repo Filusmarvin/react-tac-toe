@@ -19,7 +19,6 @@ class App extends Component {
     e.preventDefault()
     let email = this.username1.value;
     let password = this.password1.value;
-    // console.log(email , password);
     this.props.logInWithUserNameAndPassword(email, password)
   }
 
@@ -59,7 +58,7 @@ class App extends Component {
               <h1 className="no-account"> No account? Then sign up </h1>
 
               <form className="username-form" onSubmit={this.createUser.bind(this)}>
-                <input type="text"  className="username" ref={ (input) => {this.username2 = input} } />
+                <input type="text"  className="username"  ref={ (input) => {this.username2 = input} } />
                 <label> username </label>
 
                 <input type="password"  className="password" ref={ (input) => {this.password2 = input} } />
@@ -79,7 +78,7 @@ class App extends Component {
           <div className="continue-option">
             <p> You are now logged in </p>
             <p> Please press next to continue </p>
-            < Link className="next-button hvr-grow" to={`/${this.props.player.uid}`} > Next </Link>
+            < Link className="next-button hvr-grow" to={`/player/profile/${this.props.player.uid}`} > Next </Link>
           </div>
         </div>
 

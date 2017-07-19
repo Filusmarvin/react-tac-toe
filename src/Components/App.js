@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { base , app } from '../rebase';
+import base from '../rebase';
 import firebase from 'firebase';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 // Components
 import Login from './Login'
+import Profile from './Profile'
 import Tic from './Tic-tac-toe'
 import LogOut from './LogOut'
 
@@ -18,32 +19,44 @@ class App extends Component {
     super()
     this.state = {
       player: {},
-      opponent: {},
-      Score: {}
+      opponent:{}
     }
   }
 
   componentDidMount(){
     firebase.auth().onAuthStateChanged(this.setPlayerState.bind(this))
 
-    if(this.state.player.uid){
-      base.syncState(`/player/${this.state.player.uid}`,{
-        context: this,
-        state: 'player',
-        asArray: false
-      });
-    }
   }
 
 
   setPlayerState(user){
     if(user){
-      this.setState({ player:
-        {
-          uid: user.uid
-        }
+      console.log(user.uid)
+      base.update(`/${user.uid}/player`,{
+        data:{ uid:  user.uid }
       })
+
+      base.fetch(`/${user.uid}/player`,{
+        context: this,
+        asArray: false,
+        then(data){
+          this.setState({ player : {
+            uid:user.uid, ...data
+          }})
+        }
+      });
+
+
+      base.fetch(`/${user.uid}/opponent`,{
+        context: this,
+        asArray: false,
+        then(data){
+          this.setState({ opponent : data })
+        }
+      });
+
     }
+
   }
 
   logInWithUserNameAndPassword(email, password){
@@ -81,19 +94,29 @@ class App extends Component {
     }
 
   logOut () {
+    this.setState({ player: { uid:""} })
     console.log('out')
     firebase.auth().signOut().then(() => {
   });
-  this.setState({ player: {} })
   window.location.assign("/")
   }
 
-  update(){
-    let uid = this.state.player.uid;
-    base.update(`player/${uid}`,{
-      data : { marvin : 'marvin'}
-    })
+  newUser(name, age){
+    this.setState({ player : {
+      ...this.state.player,
+      name:name,
+      age:age,
+      wins:0,
+      losses:0
+    }})
+
+    this.setState({
+      opponent:{
+        wins:0,
+        losses:0
+    }})
   }
+
 
   render() {
     let player = this.state.player
@@ -104,19 +127,26 @@ class App extends Component {
       <Router>
       <div>
 
-        { player.uid ? < LogOut logOut={this.logOut.bind(this)} /> : null }
+        {/* This is to render the Log out Component  if there is a UID */}
+        { player.uid ? < LogOut logOut={this.logOut.bind(this)} player={player} /> : null }
 
+        {/* This is to render the Log in Component */}
         <Route exact path={`/`} render={(pickles) =>
-
           < Login player={player} opponent={opponent}
           logInWithUserNameAndPassword={this.logInWithUserNameAndPassword.bind(this)}
           createUserNameAndPassword={this.createUserNameAndPassword.bind(this)}
           {...pickles} /> } />
 
-        <Route exact path={`/${uid}`} render={ (pickles) =>
-          <Tic {...pickles} /> } />
 
-          <button onClick={this.update.bind(this)}> update </button>
+        {/* This is to render the users Profile Component */}
+        <Route exact path={`/player/profile/${uid}`} render={(pickles) =>
+          < Profile player={player} opponent={opponent} newUser={this.newUser.bind(this)}
+          {...pickles} /> }
+        />
+          {/* This is to render the Log out Component  if there is a UID */}
+        <Route exact path={`/player/${uid}/play`} render={ (pickles) =>
+          <Tic {...pickles} player={player} opponent={opponent}/> } />
+
       </div>
       </Router>
     );

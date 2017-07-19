@@ -5,6 +5,14 @@
 //
 // Wednesday 2pm
 
+Games played
+Games won
+Games lost
+Update name
+Update opponents name
+Show who wins
+Show whose turn it is
+
 
 
 
