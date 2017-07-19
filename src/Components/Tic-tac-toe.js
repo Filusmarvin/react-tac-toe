@@ -210,6 +210,8 @@ class Tic extends Component {
             <p> Wins ever: {player.wins} </p>
             <p> Losses ever: {player.losses}</p>
 
+            <p className="symbol"> You are X </p>
+
           </div>
 
           <section className={winner.won ? "transition-out" : "board" } >
@@ -233,6 +235,8 @@ class Tic extends Component {
             <p className="lost"> {winner.won === 'x' ? 'You are the Loser! Opponent' : null}  </p>
             <p> Wins ever: {opponent.wins} </p>
             <p> Losses ever: {opponent.losses}</p>
+
+            <p className="symbol"> You are O</p>
           </div>
 
         </div>

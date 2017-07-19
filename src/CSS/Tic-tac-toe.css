@@ -22,6 +22,7 @@
   text-align: center;
   width: 500px;
   margin: 30px;
+  height: 700px;
 }
 
 .won{
@@ -45,6 +46,7 @@
   flex-direction: column;
   text-align: center;
   width: 500px;
+  height: 700px;
   margin: 30px;
 }
 
@@ -73,4 +75,8 @@
   height: 0px;
   margin: 0px;
 
+}
+
+.symbol{
+  font-size: 50px;
 }
