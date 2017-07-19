@@ -62,35 +62,35 @@ export default class Profile extends Component {
       });
   }
 
-    handleFileSelect(evt) {
-      evt.stopPropagation();
-      evt.preventDefault();
-      var file = evt.target.files[0];
-      var metadata = {
-        'contentType': file.type
-      };
-      // Push to child path.
-      // [START oncomplete]
-      console.log(file.name)
-      storageRef.child('images/' + file.name).put(file, metadata).then(function(snapshot) {
-        console.log('Uploaded', snapshot.totalBytes, 'bytes.');
-        console.log(snapshot.metadata);
-        console.log(snapshot);
-        var url = snapshot.downloadURL;
-        console.log('File available at', url);
-
-        // [START_EXCLUDE]
-        document.getElementById('linkbox').innerHTML = '<a href="' +  url + '">Click For File</a>';
-        // [END_EXCLUDE]
-      }).catch(function(error) {
-        // [START onfailure]
-        console.error('Upload failed:', error);
-        // [END onfailure]
-      });
-      // [END oncomplete]
-      this.addToState(file.name)
-
-    }
+    // handleFileSelect(evt) {
+    //   evt.stopPropagation();
+    //   evt.preventDefault();
+    //   var file = evt.target.files[0];
+    //   var metadata = {
+    //     'contentType': file.type
+    //   };
+    //   // Push to child path.
+    //   // [START oncomplete]
+    //   console.log(file.name)
+    //   storageRef.child('images/' + file.name).put(file, metadata).then(function(snapshot) {
+    //     console.log('Uploaded', snapshot.totalBytes, 'bytes.');
+    //     console.log(snapshot.metadata);
+    //     console.log(snapshot);
+    //     var url = snapshot.downloadURL;
+    //     console.log('File available at', url);
+    //
+    //     // [START_EXCLUDE]
+    //     document.getElementById('linkbox').innerHTML = '<a href="' +  url + '">Click For File</a>';
+    //     // [END_EXCLUDE]
+    //   }).catch(function(error) {
+    //     // [START onfailure]
+    //     console.error('Upload failed:', error);
+    //     // [END onfailure]
+    //   });
+    //   // [END oncomplete]
+    //   this.addToState(file.name)
+    //
+    // }
 
     addToState(file){
       console.log(file)

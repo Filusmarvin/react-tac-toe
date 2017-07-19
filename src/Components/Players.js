@@ -38,19 +38,6 @@ class Players extends Component {
           <h2> Wins: {this.props.play.player.wins} </h2>
           <h3> Losses: {this.props.play.player.losses} </h3>
         </div>
-
-        <div className="draw-card">
-          <h1> Draws: 0 </h1>
-          <p> Sorry did not have enough to finish this portion </p>
-        </div>
-
-        <div className="opponent-card">
-          <h1> Name: {this.props.play.opponent.name ? this.props.play.opponent.name : "Opponent"} </h1>
-          <h2> Wins: {this.props.play.opponent.wins} </h2>
-          <h3> Losses: {this.props.play.opponent.losses} </h3>
-        </div>
-
-
       </section>
     )
   }
